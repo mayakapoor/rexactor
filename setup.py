@@ -21,13 +21,22 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    install_requires=[
+          'tapcap'
+    ],
+    package_dir = {"": "src"},
+    packages = setuptools.find_packages(where="src"),
+    py_modules=[
+        "grex",
+        "trex",
+        "rexactor",
+        "cli",
+        "operators"
+    ],
+    python_requires = ">=3.6",
     entry_points={
         "console_scripts": [
-            "rexactor = rexactor:main"
+            "rexactor = cli:main"
         ]
-    },
-    install_requires=[
-          'tapcap',
-      ],
-    python_requires = ">=3.6"
+    }
 )
